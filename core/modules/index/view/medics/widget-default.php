@@ -26,20 +26,23 @@
 			<th>Direccion</th>
 			<th>Email</th>
 			<th>Telefono</th>
+			<th>Categoria</th>
 			<th></th>
 			</thead>
 			<?php
 			foreach($users as $user){
+				$category = CategoryData::getById($user->category_id);
 				?>
 				<tr>
 				<td><?php echo $user->name." ".$user->lastname; ?></td>
 				<td><?php echo $user->address; ?></td>
 				<td><?php echo $user->email; ?></td>
 				<td><?php echo $user->phone; ?></td>
+				<td><?php echo $category->name; ?></td>
 				<td style="width:200px;">
 				<a href="index.php?view=medichistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
 				<a href="index.php?view=editmedic&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
-				<a href="index.php?view=delmedic&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
+				<a href="index.php?action=delmedic&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
 
 				</td>
 				</tr>

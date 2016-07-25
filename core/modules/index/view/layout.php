@@ -6,7 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>.: BookMedik :.</title>
+    <title>.: Citas Medicas :.</title>
+
 
     <!-- Bootstrap core CSS -->
     <link href="res/bootstrap3/css/bootstrap.css" rel="stylesheet">
@@ -32,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./">BookMedik <sup><small><span class="label label-info">v1.0</span></small></sup> </a>
+          <a class="navbar-brand" href="./">Cita Medica</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

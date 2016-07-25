@@ -8,11 +8,12 @@ class MedicData {
 		$this->password = "";
 		$this->is_public = "0";
 		$this->created_at = "NOW()";
+		$this->category_id = "";
 	}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (name,lastname,address,phone,email,created_at) ";
-		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->address\",\"$this->phone\",\"$this->email\",$this->created_at)";
+		$sql = "insert into ".self::$tablename." (name,lastname,address,phone,email,created_at,category_id) ";
+		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->address\",\"$this->phone\",\"$this->email\",\"$this->created_at\",$this->category_id)";
 		Executor::doit($sql);
 	}
 
@@ -33,7 +34,7 @@ class MedicData {
 
 
 	public function update(){
-		$sql = "update ".self::$tablename." set name=\"$this->name\",lastname=\"$this->lastname\",address=\"$this->address\",phone=\"$this->phone\",email=\"$this->email\" where id=$this->id";
+		$sql = "update ".self::$tablename." set name=\"$this->name\",lastname=\"$this->lastname\",address=\"$this->address\",phone=\"$this->phone\",email=\"$this->email\",category_id=\"$this->category_id\" where id=$this->id";
 		Executor::doit($sql);
 	}
 

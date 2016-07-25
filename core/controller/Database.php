@@ -1,6 +1,6 @@
 <?php
 class Database {
-	public static $db;e
+	public static $db;
 	public static $con;
 	function Database(){
 		$this->user="root";$this->pass="admin";$this->host="localhost";$this->ddbb="bookmedik";

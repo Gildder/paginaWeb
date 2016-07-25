@@ -22,7 +22,7 @@ $medics = MedicData::getAll();
         ?>
 
   <div class="form-group">
-    <div class="col-lg-2">
+    <div class="col-lg-3">
 		<div class="input-group">
 		  <span class="input-group-addon"><i class="fa fa-search"></i></span>
 		  <input type="text" name="q" value="<?php if(isset($_GET["q"]) && $_GET["q"]!=""){ echo $_GET["q"]; } ?>" class="form-control" placeholder="Palabra clave">
@@ -50,7 +50,7 @@ $medics = MedicData::getAll();
 </select>
 		</div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3">
 		<div class="input-group">
 		  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 		  <input type="date" name="date_at" value="<?php if(isset($_GET["date_at"]) && $_GET["date_at"]!=""){ echo $_GET["date_at"]; } ?>" class="form-control" placeholder="Palabra clave">

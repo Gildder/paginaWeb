@@ -1,9 +1,11 @@
-<?php $user = MedicData::getById($_GET["id"]);?>
+<?php $user = MedicData::getById($_GET["id"]);
+$category = CategoryData::getAll();
+?>
 <div class="row">
 	<div class="col-md-12">
 	<h1>Editar Medico</h1>
 	<br>
-		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=updatemedic" role="form">
+		<form class="form-horizontal" method="post" id="addproduct" action="./?action=updatemedic" role="form">
 
 
   <div class="form-group">
@@ -38,12 +40,24 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Categoria</label>
+    <div class="col-md-6">
+<select name="category_id" class="form-control" required>
+<option value="">-- SELECCIONE --</option>
+  <?php foreach($category as $c):?>
+    <option value="<?php echo $c->id; ?>" <?php if($c->id==$user->category_id){ echo "selected"; }?>><?php echo $c->id." - ".$c->name; ?></option>
+  <?php endforeach; ?>
+</select>
+    </div>
+  </div>
+
 
   <p class="alert alert-info">* Campos obligatorios</p>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-    <input type="hidden" name="user_id" value="<?php echo $user->id;?>">
+    <input type="hidden" name="id" value="<?php echo $user->id;?>">
       <button type="submit" class="btn btn-primary">Actualizar Medico</button>
     </div>
   </div>
